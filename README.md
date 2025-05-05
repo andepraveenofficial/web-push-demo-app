@@ -24,9 +24,13 @@
 - Production : `npm start`
 
 ### Live Demo
+
 - Render : [ https://web-push-demo-app.onrender.com ]
 
 ### Documentation
 
 - medium : [ https://medium.com/@a7ul/beginners-guide-to-web-push-notifications-using-service-workers-cb3474a17679 ]
 
+### Test Notifications
+
+- web-push-book : [ https://web-push-book.gauntface.com/demos/notification-examples/ ]

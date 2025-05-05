@@ -1,8 +1,22 @@
 console.log("I am ui");
 const sendNotification = document.getElementById("sendNotification");
+const enableNotification = document.getElementById("enableNotifications");
 
 const publicVapidKey =
 	"BMVIJZzWPn25X5zBjsu0bLAuWYmMRT8rfqPmx0u3JniDe3aWhz1e7M39DCiN8pAsTxs6yJKHLwn5csG-uYbNl0Y";
+
+const handleEnableNotifications = async () => {
+	const permission = await Notification.requestPermission();
+	if (permission === "granted") {
+		new Notification("Notifications enabled!", {
+			body: "You will now receive updates.",
+		});
+	} else {
+		alert("Notifications are disabled or denied.");
+	}
+};
+
+enableNotification.addEventListener("click", handleEnableNotifications);
 
 // Check for service worker
 if ("serviceWorker" in navigator) {
