@@ -1,0 +1,19 @@
+{
+  "name": "02-server",
+  "version": "1.0.0",
+  "description": "- Our Push Notifications are supported in all popular browsers and mobile devices.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev":"nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "web-push": "^3.6.7"
+  }
+}
