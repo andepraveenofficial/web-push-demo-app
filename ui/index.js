@@ -1,11 +1,15 @@
 console.log("I am ui");
+const sendNotification = document.getElementById("sendNotification");
 
 const publicVapidKey =
 	"BMVIJZzWPn25X5zBjsu0bLAuWYmMRT8rfqPmx0u3JniDe3aWhz1e7M39DCiN8pAsTxs6yJKHLwn5csG-uYbNl0Y";
 
 // Check for service worker
 if ("serviceWorker" in navigator) {
-	send().catch((err) => console.error(err));
+	// send().catch((err) => console.error(err));
+	sendNotification.addEventListener("click", () => {
+		send().catch((err) => console.error(err));
+	});
 }
 
 // Register SW, Register Push, Send Push
@@ -24,16 +28,16 @@ async function send() {
 		applicationServerKey: base64UrlToUint8Array(publicVapidKey),
 	});
 
-  // 03 Send Push Notification
-  console.log("Sending Push Notification");
-  await fetch("/subscribe", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(subscription),
-  });
-  console.log("Push Notification sent");
+	// 03 Send Push Notification
+	console.log("Sending Push Notification");
+	await fetch("/subscribe", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(subscription),
+	});
+	console.log("Push Notification sent");
 }
 
 // This Function takes from official github demo
